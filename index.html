@@ -13,7 +13,7 @@
         width:100%;
         height:100vh;
         }
-        .wrapper:nth-child(2) {
+        .wrapper:nth-child(odd) {
         background: cornflowerblue;
         }
         .inner {
@@ -81,8 +81,19 @@
           <h2 class="back-to-position to-right delay-0">TEST</h2>
           <h4 class="back-to-position to-left delay-1">TEST</h4>
         </div>
-  
-
+      </div>
+      <div class="wrapper scroll-spy">
+        <div class="inner">
+          <h2 class="back-to-position to-right delay-0">TEST</h2>
+          <h4 class="back-to-position to-left delay-1">TEST</h4>
+        </div>
+      </div>
+      <div class="wrapper scroll-spy">
+        <div class="inner">
+          <h2 class="back-to-position to-right delay-0">TEST</h2>
+          <h4 class="back-to-position to-left delay-1">TEST</h4>
+        </div>
+      </div>
         <script>
         const spyEls = document.querySelectorAll('.scroll-spy')
         spyEls.forEach(function(spyEl){
