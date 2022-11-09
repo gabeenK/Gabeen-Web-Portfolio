@@ -1,111 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./reset.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
     <style>
+        /* 헤더 */
+        .header{
+            background: #2e8cff;
+            color: #d2f2e9;
+            height: 100%;
+            overflow-y: auto;
+            position: fixed;
+            text-align: center;
+            top: 0;
+            width: 350px;
+            right: 0;
+        }
+        .header nav{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header nav ul{
+            width: 100%;
+            height: 48%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            font-size: 1.4em;
+            
+        }
+      
+
+        .introduction{
+            font-weight: bold;
+            color: #2e8cff;
+            width: 80%;
+            height: 15%;
+            border:1px solid black;
+
+        }
+        .introduction-content-container{
+            width: 80%;
+            height: 60%;
+            border: 1px solid black;
+        }
+
+
+
+
         .wrapper {
-        background: orange;  
-        width:100%;
-        height:100vh;
+            background: white;
+            width: 100%;
+            height: 100vh;
         }
-        .wrapper:nth-child(odd) {
-        background: cornflowerblue;
+
+        /* .wrapper:first-child {
+            background: white;
+        } */
+
+        /* .wrapper:nth-child(odd) {
+            background: rgb(240, 247, 253);
+        } */
+
+        .wrapper:nth-child(5) {
+            /* background: rgb(0 61 153);
+            padding: 80px 0;
+            box-sizing: border-box; */
+            width: calc(100% - 350px);
+            height: auto;
         }
+
         .inner {
-        height: 400px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-size: 60px;
-        color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+            color: black;
+            width: calc(100% - 350px);
+            height: 100%;
+            justify-content: center;
         }
+
         .back-to-position {
-        opacity: 0;
-        transition: 1s;
+            opacity: 0;
+            transition: 1s;
         }
+
         .back-to-position.to-right {
-        transform: translateX(-150px);
+            transform: translateX(-150px);
         }
+
         .back-to-position.to-left {
-        transform: translateX(150px);
+            transform: translateX(150px);
         }
+
         .show .back-to-position {
-        opacity: 1;
-        transform: translateX(0);
+            opacity: 1;
+            transform: translateX(0);
         }
+
         .show .back-to-position.delay-0 {
-        transition-delay: 0s;
+            transition-delay: 0s;
         }
+
         .show .back-to-position.delay-1 {
-        transition-delay: 0.3s;
+            transition-delay: 0.3s;
         }
+        .show .back-to-position.delay-2 {
+            transition-delay: 0.4s;
+        }
+
+        .show .back-to-position.delay-3 {
+            transition-delay: 0.5s;
+        }
+        .show .back-to-position.delay-4 {
+            transition-delay: 0.6s;
+        }
+        /* 보유 기술 & 자격증*/
+        .skill {
+            /* flex-direction: row; */
+            /* justify-content: space-evenly; */
+        }
+
+        .skill-head {
+            height: 10%;
+            width: 80%;
+            font-weight: bold;
+        }
+        .skill-text{
+            height: 5%;
+            width: 80%;
+            font-weight: bold;
+            font-size: 21px;
+            display: flex;
+            justify-content: start;
+            align-items: end;
+        }
+
+        .skill-container1,
+        .skill-container2 {
+            width: 80%;
+            height: 30%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+        }
+        .skill-container1{
+            height: 50%;
+        }
+
+        .skill-box-container {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .skill-box {
+            border: 1px solid black;
+            width: 70%;
+            height: 100%;
+        }
+        .skill-box ul{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            font-size: 0.5em;
+            color: #3e3e3e;
+        }
+        .skill-box img{
+            width: 25px;
+            margin-right: 25px;
+        }
+        /* 프로젝트 */
+        .project-container {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+
+
+
+.body{
+  /* background: #3ea0e2; */
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(90deg, #5c9deb, #a2cbff);
+}
+::selection{
+  color: #fff;
+  background: #3ea0e2;
+}
+.wrapper-time{
+  max-width: 1080px;
+  margin: 50px auto;
+  padding: 0 20px;
+  position: relative;
+}
+.wrapper-time .center-line{
+  position: absolute;
+  height: 100%;
+  width: 4px;
+  background: #fff;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+}
+.wrapper-time .row{
+  display: flex;
+}
+.wrapper-time .row-1{
+  justify-content: flex-start;
+}
+.wrapper-time .row-2{
+  justify-content: flex-end;
+}
+.wrapper-time .row section{
+  background: #fff;
+  border-radius: 5px;
+  width: calc(50% - 79px);
+  padding: 20px;
+  position: relative;
+}
+.wrapper-time .row section::before{
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background: #fff;
+  top: 28px;
+  z-index: -1;
+  transform: rotate(45deg);
+}
+.row-1 section::before{
+  right: -7px;
+}
+.row-2 section::before{
+  left: -7px;
+}
+.row section .icon,
+.center-line .scroll-icon{
+  position: absolute;
+  background: #f2f2f2;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #3ea0e2;
+  font-size: 17px;
+  box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0,0,0,0.08), 0 3px 0 4px rgba(0,0,0,0.05);
+}
+.center-line .scroll-icon{
+  bottom: 0px;
+  left: 50%;
+  font-size: 25px;
+  transform: translateX(-50%);
+}
+.row-1 section .icon{
+  top: 15px;
+  right: -60px;
+}
+.row-2 section .icon{
+  top: 15px;
+  left: -60px;
+}
+.row section .details,
+.row section .bottom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.row section .details .title{
+    font-size: 18px;
+    font-weight: bold;
+}
+.row section p{
+  margin: 10px 0 17px 0;
+  font-size: 14px;
+  line-height: 18px;
+}
+.row section .bottom a{
+  text-decoration: none;
+  background: #3ea0e2;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius: 5px;
+  /* font-size: 17px; */
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+.row section .bottom a:hover{
+  transform: scale(0.97);
+}
+@media(max-width: 790px){
+  .wrapper-time .center-line{
+    left: 40px;
+  }
+  .wrapper-time .row{
+    margin: 30px 0 3px 60px;
+  }
+  .wrapper-time .row section{
+    width: 100%;
+  }
+  .row-1 section::before{
+    left: -7px;
+  }
+  .row-1 section .icon{
+    left: -60px;
+  }
+}
+@media(max-width: 440px){
+  .wrapper-time .center-line,
+  .row section::before,
+  .row section .icon{
+    display: none;
+  }
+  .wrapper-time .row{
+    margin: 10px 0;
+  }
+}
+
+        
     </style>
 </head>
+
 <body>
-    <!-- <header class="hidden item">
-        <h1>1</h1>
+    <header class="header">
+        <nav>
+            <ul>
+                <li>INTRO</li>
+                <li>SKILLSET</li>
+                <li>PORTFOLIO</li>
+                <li>CONTACT</li>
+            </ul>
+        </nav>
     </header>
-    <article class="hidden item">
-        <h1>2</h1>
-    </article>
-    <article class="hidden item">
-        <h1>3</h1>
-    </article>
-    <article class="hidden item">
-        <h1>4</h1>
-    </article>
-    <article class="hidden item">
-        <h1>5</h1>
-    </article> -->
+
 
     <div class="wrapper scroll-spy">
         <div class="inner">
-          <h2 class="back-to-position to-right delay-0">TEST</h2>
-          <h4 class="back-to-position to-left delay-1">TEST</h4>
+            <h2 class="back-to-position to-right delay-0 introduction" >Introduction</h2>
+            <div class="back-to-position to-left delay-1 introduction-content-container" >TEST</div>
         </div>
-      </div>
-      <div class="wrapper scroll-spy">
+    </div>
+    <div class="wrapper scroll-spy">
+        <div class="inner skill">
+            <h2 class="back-to-position to-right delay-0 skill-head">TEST</h2>
+            <p class="back-to-position to-right delay-0 skill-text">사용하는 언어 및 프레임워크</p>
+            <div class="skill-container1">
+
+                <!-- <h4 class="back-to-position to-left delay-1">TEST</h4> -->
+                <div class="back-to-position to-right delay-0 skill-box-container">
+                    <div class="skill-box">
+                        <ul>
+                            <li><img src="./tag-icon.png">HTML</li>
+                            <li><img src="./tag-icon.png">CSS</li>
+                            <li><img src="./tag-icon.png">JSP</li>
+                            <li><img src="./tag-icon.png">JavaScript</li>
+                            <li><img src="./tag-icon.png">JQuery</li>
+                           
+                        </ul>
+                    </div>
+                </div>
+                <div class="back-to-position to-right delay-0 skill-box-container">
+                    <div class="skill-box">
+                        <ul>
+                            <li><img src="./tag-icon.png">JAVA</li>
+                            <li><img src="./tag-icon.png">Spring</li>
+                            <li><img src="./tag-icon.png">MyBatis</li>
+                            <li><img src="./tag-icon.png">MySql</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="back-to-position to-right delay-0 skill-text">개발 도구</p>
+            <div class="skill-container2">
+                <div class="back-to-position to-left delay-1 skill-box-container">
+                    <div class="skill-box">
+                        <ul>
+                            <li><img src="./tag-icon.png">Eclipse</li>
+                            <li><img src="./tag-icon.png">VScode</li>
+                            <li><img src="./tag-icon.png">IntelliJ</li>
+                            <li><img src="./tag-icon.png">GitHub</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="back-to-position to-left delay-1 skill-box-container">
+                    <div class="skill-box">
+                        <ul>
+                            <li><img src="./tag-icon.png">MariaDB</li>
+                            <li><img src="./tag-icon.png">Oracle</li>
+                            <li><img src="./tag-icon.png">MySql</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper scroll-spy">
         <div class="inner">
-          <h2 class="back-to-position to-right delay-0">TEST</h2>
-          <h4 class="back-to-position to-left delay-1">TEST</h4>
+            <h2 class="back-to-position to-right delay-0">프로젝트</h2>
+            <h4 class="back-to-position to-left delay-1">[AWOO]</h4>
+            <div class="project-container back-to-position to-right delay-1">
+                <div>1</div>
+                <div>2</div>
+            </div>
         </div>
-      </div>
-      <div class="wrapper scroll-spy">
+    </div>
+    <div class="wrapper scroll-spy">
+        <div class="body">
+            <div class="wrapper-time ">
+              <div class="center-line ">
+                <a href="#" class="scroll-icon"><i class="fas fa-caret-up"></i></a>
+              </div>
+              <div class="row row-1 back-to-position to-right delay-0">
+                <section>
+                  <i class="icon fas fa-home"></i>
+                  <div class="details">
+                    <span class="title ">[수강] 구디아카데미</span>
+                    <span>22.06.08 ~ 22.11.21</span>
+                  </div>
+                  <p>
+                    (디지털컨버전스)공공테이터 융합 자바/스프링 개발자 양성과정(7)<br><br>
+                    &nbsp;[프로젝트]<br>
+                    &nbsp;제목 : AWOO (Any Where, Office (or) Out)<br>
+                    &nbsp;기간 : 2022.10.17 ~ 2022. 11. 21 (5주)<br>
+                    &nbsp;인원 : 5명<br>
+                    &nbsp;개발내용 : 그룹웨어, 협업툴
+                  </p>
+                  <div class="bottom">
+                    <!-- <a href="#">Read more</a> -->
+                    <i>   
+                       
+                    </i>
+                  </div>
+                </section>
+              </div>
+              <div class="row row-2 back-to-position to-left delay-1">
+                <section>
+                  <i class="icon fas fa-star"></i>
+                  <div class="details">
+                    <span class="title">[근무] JSOFT</span>
+                    <span>21.11.15 ~ 22.05.31</span>
+                  </div>
+                  <p>
+                    프론트엔드 개발<br><br>
+                    1) 프로젝트명 : KDI 설문조사 여론분석팀 설문조사 솔루션 유지보수 및 개발<br>
+                    - 주요 업무 : 프론트 전담<br>
+                    - 담당 역할 : CSS, JSP, JavaScript 화면 구현 , 기능 개발<br>
+                    - 기술 스택 : (JSP, JavaScript Java, spring Frame Wrok ,oracle, mysql 등)<br>
+                    &nbsp;&nbsp;자사의 설문조사 솔루션을 이용한 웹 커스터마이징 작업<br>
+                    <br>
+                    2) 프로젝트명 : 이천시 기록관리시스템 솔루션 유지보수<br>
+                    - 주요 업무 : 프론트 전담<br>
+                    - 담당 역할 : 프론트 입력값 가공처리<br>
+                    - 기술 스택 : (JSP, JavaScript Java, spring Frame Wrok , mysql 등)<br>
+                    - 업무 기간 : 2022.03 ~ 2022.05 (약 3개월)<br>
+                    &nbsp;&nbsp;기록물 등록 불가, 입력값 저장 불가, 화면 UI 수정 및 여러 오류 유지보수<br>
+                  </p>
+                  <div class="bottom">
+                    <!-- <a href="#">Read more</a> -->
+                    <!-- <i>- Someone famous</i> -->
+                  </div>
+                </section>
+              </div>
+              <div class="row row-1 back-to-position to-right delay-2">
+                <section>
+                  <i class="icon fas fa-rocket"></i>
+                  <div class="details">
+                    <span class="title">[근무] 공터 영어 학원</span>
+                    <span>20.09.01 ~ 21.04.30</span>
+                  </div>
+                  <p>
+                    - 5세 ~ 13세 학생 영어 지도<br>
+                    - 매일 학생 진도사항 정리 및 특이사항 정리 후 보고<br>
+                    - 매주 화,목 특화수업 프로그램 준비 및 월,수,금 정규수업 자료준비<br>
+                    - 매달 학부모와 학생의 교육 상담 및 다음달 학습계획표 전달<br>
+                    - 행사 계획 및 진행 (할로윈, 크리스마스, speech contest, spelling bee contest 등)
+                  </p>
+                  <!-- <div class="bottom"> -->
+                    <!-- <a href="#">Read more</a>
+                    <i>- Someone famous</i> -->
+                  <!-- </div> -->
+                </section>
+              </div>
+              <div class="row row-2 back-to-position to-left delay-3">
+                <section>
+                  <i class="icon fas fa-globe"></i>
+                  <div class="details">
+                    <span class="title">[졸업] JamesCook University in Singapore</span>
+                    <span>2021.6</span>
+                  </div>
+                  <p>Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero sapiente voluptas debitis dicta dolore.</p>
+                  <!-- <div class="bottom"> -->
+                    <!-- <a href="#">Read more</a>
+                    <i>- Someone famous</i> -->
+                  <!-- </div> -->
+                </section>
+              </div>
+              <div class="row row-1 back-to-position to-right delay-4">
+                <section>
+                  <i class="icon fas fa-paper-plane"></i>
+                  <div class="details">
+                    <span class="title">[졸업]Eucon International HighSchool</span>
+                    <span>~2017</span>
+                  </div>
+                  <p>Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero sapiente voluptas debitis dicta dolore.</p>
+                  <!-- <div class="bottom"> -->
+                    <!-- <a href="#">Read more</a>
+                    <i>- Someone famous</i> -->
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper scroll-spy">
         <div class="inner">
-          <h2 class="back-to-position to-right delay-0">TEST</h2>
-          <h4 class="back-to-position to-left delay-1">TEST</h4>
+            <h2 class="back-to-position to-right delay-0">Contact Me</h2>
+            <h4 class="back-to-position to-left delay-1">TEST</h4>
         </div>
-      </div>
-      <div class="wrapper scroll-spy">
-        <div class="inner">
-          <h2 class="back-to-position to-right delay-0">TEST</h2>
-          <h4 class="back-to-position to-left delay-1">TEST</h4>
-        </div>
-      </div>
-      <div class="wrapper scroll-spy">
-        <div class="inner">
-          <h2 class="back-to-position to-right delay-0">TEST</h2>
-          <h4 class="back-to-position to-left delay-1">TEST</h4>
-        </div>
-      </div>
-        <script>
+    </div>
+    <script>
+
+
+    </script>
+
+
+    <script src="JavaScript/timeline-V2.js"></script>
+    <script>
+
+        // 스크롤
         const spyEls = document.querySelectorAll('.scroll-spy')
-        spyEls.forEach(function(spyEl){
-        new ScrollMagic
-            .Scene({ // 감시할 장면(Scene)을 추가
-            triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
-            triggerHook: .8 // 화면의 80% 지점에서 보여짐 여부 감시
-            })
-            .setClassToggle(spyEl, 'show') // 요소가 화면에 보이면 show 클래스 추가
-            .addTo(new ScrollMagic.Controller()) // 컨트롤러에 장면을 할당(필수!)
+        spyEls.forEach(function (spyEl) {
+            new ScrollMagic
+                .Scene({ // 감시할 장면(Scene)을 추가
+                    triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+                    triggerHook: .8 // 화면의 80% 지점에서 보여짐 여부 감시
+                })
+                .setClassToggle(spyEl, 'show') // 요소가 화면에 보이면 show 클래스 추가
+                .addTo(new ScrollMagic.Controller()) // 컨트롤러에 장면을 할당(필수!)
         })
 
-        </script>
+
+
+        // 타임라인
+        var downArrow = document.getElementById("btn1");
+        var upArrow = document.getElementById("btn2");
+
+        downArrow.onclick = function () {
+            'use strict';
+            document.getElementById("first-list").style = "top:-620px";
+            document.getElementById("second-list").style = "top:-620px";
+            downArrow.style = "display:none";
+            upArrow.style = "display:block";
+        };
+
+        upArrow.onclick = function () {
+            'use strict';
+            document.getElementById("first-list").style = "top:0";
+            document.getElementById("second-list").style = "top:80px";
+            upArrow.style = "display:none";
+            downArrow.style = "display:block";
+        };
+
+    </script>
 </body>
+
 </html>
