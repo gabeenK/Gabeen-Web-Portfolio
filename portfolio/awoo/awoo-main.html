@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./resource/default.css">
+    <link rel="stylesheet" href="./resource/mainstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    .container-inner-bbs{
+        background-color: #272454;
+        flex-direction: column;
+    }
+    .container-inner-bbs img{
+        width: 180px;
+        margin-bottom: 66px;
+    }
+    .inner-div{
+    width: 90%;
+    height: 74%;
+    background-color: white;
+    border-radius: 30px;
+    }
+
+    .intro{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .text{
+    display: inline; vertical-align: middle;
+    border-right: .05em solid black;
+    animation:  cursor 0.2s ease infinite;
+    }
+    .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 36px;
+    font-size: 18px;
+    font-weight: bold;
+    color: gray;
+    height: 60%;
+    }
+    .point-color{
+        color:#698aff;
+    }
+    .developer{
+        height: 10%;
+    }
+</style>
+
+
+<body>
+
+    <div class="container-wrap">
+		<div class="container">
+            <nav class="nav">
+                <div class="menuwrap">
+                    <button type="button" id="MoveToMain">자기소개 페이지로 이동</button>
+                    <ul class="menu">
+                        <li><a href="./awoo-main.html">홈</a></li>
+                    </ul>
+
+                    <ul class="menu">
+                        <li><a href="./awoo-erd.html">ERD</a></li>
+                    </ul>
+
+
+                    <!-- <ul onclick="show_sub()" class="dropmenu" id=""> -->
+                    <ul class="dropmenu" id="functions">
+                        <li>기능 소개</li>
+                        <li class="drop_down_pointer"><span class="menu-up btn-display">▲</span><span
+                                class="menu-down">▼</span></li>
+                        <li>
+                            <ul class="sub">
+                                <li><a href="">홈 화면</a></li>
+                                <li><a href="">채팅</a></li>
+                                <li><a href="">근태 관리</a></li>
+                                <li><a href="">휴가 신청</a></li>
+                                <li><a href="">게시판</a></li>
+                                <li><a href="">직원현황</a></li>
+                                <li><a href="">쪽지</a></li>
+                                <li><a href="">메일</a></li>
+                                <li><a href="">캘린더</a></li>
+                                <li><a href="">관리자</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="dropmenu1" id="functions-i-do">
+                        <li>내가 구현한 기능</li>
+                        <li class="drop_down_pointer"><span class="menu-up1 btn-display">▲</span><span
+                                class="menu-down1">▼</span></li>
+                        <li>
+                            <ul class="sub1">
+                                <li><a href="#">홈 화면</a></li>
+                                <li><a href="#">근태 관리</a></li>
+                                <li><a href="#">휴가 신청</a></li>
+                                <li><a href="#">쪽지</a></li>
+                                <li><a href="#">메일</a></li>
+                                <li><a href="#">관리자 카카오톡 공지</a></li>
+                                <li><a href="#">로그인 보안 인증</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="menu">
+                        <li><a href="./awoo-testcase.html">테스트 케이스</a></li>
+                    </ul>
+
+                    
+                </div>
+            </nav>
+    
+            <div class="container-inner-bbs">
+                <!-- <img src="./resource/logo-white.png" alt=""> -->
+                <div class="inner-div-bbs">
+                    <div class="intro">
+                        <h1 class="text"></h1>
+                    </div>
+                    <div class="content">     
+                          <p>언제 어디서나 <span class="point-color">‘오피스’</span>든 <span class="point-color">‘오피스 밖’</span>이든 <span class="point-color">‘어디서든’</span></p>
+                          <p>소규모 특화 그룹웨어 <span style="color:#698aff; text-decoration-line: underline;">AWOO</span> 입니다</p>
+                          <br>
+                          <p>근태관리, 휴가관리, 메일, 채팅, 캘린더 관리자 등</p>
+                          <p><span style="color:#698aff; text-decoration-line: underline;">AWOO</span>는 업무에 필요한 가장 강력한 기능들을 쉽고 빠르게 지원합니다</p>
+                    </div>
+                    <div class="developer">
+                        개발자 : 김가빈, 강혜은, 박지영, 장희연, 손태영    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   <script src="./resource/dropDown.js"></script>
+   <script>
+        document.getElementById("functions").addEventListener("click",function(){
+            location.href = "./awoo-functions.html";
+        })
+        document.getElementById("functions-i-do").addEventListener("click",function(){
+            location.href = "./awoo-functions-i-do.html";
+        })
+        document.getElementById("MoveToMain").addEventListener("click",function(){
+            location.href = "/web-portfolio/index.html";
+        })
+
+
+        "use strict";
+            const content = "Any Where, Office (or) Out"
+            const text = document.querySelector(".text")
+            let index = 0;
+
+            function sleep(delay){ 
+                const start = new Date().getTime(); 
+                while (new Date().getTime() < start + delay); 
+                }
+
+            function typing(){
+                text.textContent += content[index++];
+                if(index > content.length){
+                    text.textContent = ""
+                    index = 0;
+                    sleep(3000);
+                }
+            }
+            setInterval(typing, 180)
+   </script>
+</body>
+
+</html>

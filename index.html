@@ -10,7 +10,65 @@
     <link rel="stylesheet" href="./style/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
     <style>
-    
+      
+      li a{
+        text-decoration: none;
+        color: white;
+        width: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        height: 80px;
+        justify-content: center;
+        align-items: center;
+      }
+      li a:hover, li a:active, .white{
+        background-color: white;
+        color:#2e8cff;
+      }
+
+      .awoo-main{
+        width: 500px;
+      }
+      .Portfolio-title{
+        font-size: 40px;
+        font-weight: bold;
+        color: gray;
+        height: 12%;
+      }
+      .Portfolio-content-title{
+        font-size: 30px;
+        color: gray;
+        font-weight: bold;
+        margin-bottom: 50px;
+      }
+      .Portfolio-content{ 
+        font-size: 20px;
+        line-height: 33px;
+        color: #666666;
+      }
+      
+      .buttons{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: end;
+        height: 75px;
+      }
+      .buttons button{
+        width: 35%;
+        height: 55%;
+        border: 1px solid #cfcfcf;
+        color: #444444;
+        border-radius: 26px;
+        background: linear-gradient(0deg, #d3d3d3, #f3f3f32e);
+        cursor: pointer;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+      .buttons button:hover{
+        background: linear-gradient(0deg, #4e4e4e, #a5a5a5);
+        color: white;
+      }
     </style>
 </head>
 
@@ -18,16 +76,17 @@
     <header class="header">
         <nav>
             <ul>
-                <li>INTRO</li>
-                <li>SKILLSET</li>
-                <li>PORTFOLIO</li>
-                <li>CONTACT</li>
+                <li><a href="#intro">INTRO</a></li>
+                <li><a href="#skillset">SKILLSET</a></li>
+                <li><a href="#portfolio">PORTFOLIO</a></li>
+                <li><a href="#timeline">timeline</a></li>
+                <li><a href="#contact">CONTACT</a></li>
             </ul>
         </nav>
     </header>
 
 
-    <div class="wrapper scroll-spy">
+    <div class="wrapper scroll-spy" id="intro">
         <div class="inner">
             <h2 class="back-to-position to-right delay-0 introduction" >Introduction</h2>
             <div class="back-to-position to-left delay-1 introduction-content-container" >
@@ -37,7 +96,7 @@
             </div>
         </div>
     </div>
-    <div class="wrapper scroll-spy">
+    <div class="wrapper scroll-spy" id="skillset">
         <div class="inner skill">
             <h2 class="back-to-position to-right delay-0 skill-head">TEST</h2>
             <p class="back-to-position to-right delay-0 skill-text">사용하는 언어 및 프레임워크</p>
@@ -91,17 +150,28 @@
             </div>
         </div>
     </div>
-    <div class="wrapper scroll-spy">
+    <div class="wrapper scroll-spy" id="portfolio">
         <div class="inner">
-            <h2 class="back-to-position to-right delay-0">프로젝트</h2>
-            <h4 class="back-to-position to-left delay-1">[AWOO]</h4>
+            <h2 class="back-to-position to-right delay-0 skill-head">Portfolio</h2>
+            <h4 class="back-to-position to-left delay-1 Portfolio-title">[AWOO]</h4>
             <div class="project-container back-to-position to-right delay-1">
-                <div>1</div>
-                <div>2</div>
+                <div>
+                  <img src="./img/awoo-main.PNG" class="awoo-main">
+                </div>
+                <div class="Portfolio-content" >
+                  <p class="Portfolio-content-title">AWOO 그룹웨어 (협업툴)</p>
+                   출퇴근 체크는 기본, 다양한 요청까지<br>
+                   근태관리의 모든 것을 빠르게 제공하는 협업툴로<br>
+                   효과적인 팀워크를 만들어 낼 서비스 입니다.<br>
+                  <div class="buttons">
+                    <button type="button1" id="a-portfolio">자세히 보기</button>
+                    <button type="button2" id="git-portfolio">git으로 보기</button>
+                  </div>
+                 </div>
             </div>
         </div>
     </div>
-    <div class="wrapper scroll-spy">
+    <div class="wrapper scroll-spy" id="timeline">
         <div class="body">
             <div class="wrapper-time ">
               <div class="center-line ">
@@ -209,7 +279,7 @@
             </div>
         </div>
     </div>
-    <div class="wrapper scroll-spy">
+    <div class="wrapper scroll-spy" id="contact">
         <div class="inner">
             <h2 class="back-to-position to-right delay-0 contact-me">Contact Me</h2>
             <h4 class="back-to-position to-left delay-1 contact-content">
@@ -221,49 +291,33 @@
             </h4>
         </div>
     </div>
-    <script>
-
-
-    </script>
-
-
-    <script src="JavaScript/timeline-V2.js"></script>
+    
     <script>
 
         // 스크롤
         const spyEls = document.querySelectorAll('.scroll-spy')
         spyEls.forEach(function (spyEl) {
-            new ScrollMagic
-                .Scene({ // 감시할 장면(Scene)을 추가
+          new ScrollMagic
+          .Scene({ // 감시할 장면(Scene)을 추가
                     triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
                     triggerHook: .8 // 화면의 80% 지점에서 보여짐 여부 감시
+                  })
+                  .setClassToggle(spyEl, 'show') // 요소가 화면에 보이면 show 클래스 추가
+                  .addTo(new ScrollMagic.Controller()) // 컨트롤러에 장면을 할당(필수!)
+                  
+                  console.log()
+                  
                 })
-                .setClassToggle(spyEl, 'show') // 요소가 화면에 보이면 show 클래스 추가
-                .addTo(new ScrollMagic.Controller()) // 컨트롤러에 장면을 할당(필수!)
-        })
+              
+      
 
 
-
-        // 타임라인
-        var downArrow = document.getElementById("btn1");
-        var upArrow = document.getElementById("btn2");
-
-        downArrow.onclick = function () {
-            'use strict';
-            document.getElementById("first-list").style = "top:-620px";
-            document.getElementById("second-list").style = "top:-620px";
-            downArrow.style = "display:none";
-            upArrow.style = "display:block";
-        };
-
-        upArrow.onclick = function () {
-            'use strict';
-            document.getElementById("first-list").style = "top:0";
-            document.getElementById("second-list").style = "top:80px";
-            upArrow.style = "display:none";
-            downArrow.style = "display:block";
-        };
-
+        document.getElementById("a-portfolio").addEventListener("click",function(){
+          location.href="./portfolio/awoo/awoo-main.html";
+        });
+        document.getElementById("git-portfolio").addEventListener("click",function(){
+          location.href="https://github.com/KangHyeEun/Gof.git";
+        });
     </script>
 </body>
 

@@ -94,6 +94,7 @@
         .back-to-position.to-left {
             transform: translateX(150px);
         }
+      
 
         .show .back-to-position {
             opacity: 1;

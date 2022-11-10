@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./resource/default.css">
+    <link rel="stylesheet" href="./resource/mainstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;700&display=swap" rel="stylesheet">
+</head>
+
+<style>
+     .sub1{
+        animation: open 1s both 0s;
+    }
+
+    @keyframes open {
+        0%{
+            height: 0;
+        }
+        100%{
+            height:265px;
+        }
+    }
+</style>
+
+<body>
+
+    <div class="container-wrap">
+		<div class="container">
+            <nav class="nav">
+                <div class="menuwrap">
+                    <button type="button" id="MoveToMain">자기소개 페이지로 이동</button>
+                    <ul class="menu">
+                        <li><a href="./awoo-main.html">홈</a></li>
+                    </ul>
+
+                    <ul class="menu">
+                        <li><a href="./awoo-erd.html">ERD</a></li>
+                    </ul>
+
+                 
+
+                    <!-- <ul onclick="show_sub()" class="dropmenu" id=""> -->
+                    <ul class="dropmenu" id="functions">
+                        <li>기능 소개</li>
+                        <li class="drop_down_pointer"><span class="menu-up btn-display">▲</span><span
+                                class="menu-down">▼</span></li>
+                        <li>
+                            <ul class="sub">
+                                <li><a href="">홈 화면</a></li>
+                                <li><a href="">근태 관리</a></li>
+                                <li><a href="">휴가 신청</a></li>
+                                <li><a href="">게시판</a></li>
+                                <li><a href="">직원현황</a></li>
+                                <li><a href="">쪽지</a></li>
+                                <li><a href="">메일</a></li>
+                                <li><a href="">캘린더</a></li>
+                                <li><a href="">관리자</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="dropmenu1" id="functions-i-do">
+                        <li>내가 구현한 기능</li>
+                        <li class="drop_down_pointer"><span class="menu-up1 btn-display">▲</span><span
+                                class="menu-down1">▼</span></li>
+                        <li>
+                            <ul class="sub1">
+                                <li><a href="#">홈 화면</a></li>
+                                <li><a href="#">근태 관리</a></li>
+                                <li><a href="#">휴가 신청</a></li>
+                                <li><a href="#">쪽지</a></li>
+                                <li><a href="#">메일</a></li>
+                                <li><a href="#">관리자 카카오톡 공지</a></li>
+                                <li><a href="#">로그인 보안 인증</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="menu">
+                        <li><a href="./awoo-testcase.html">테스트 케이스</a></li>
+                    </ul>
+
+                    
+                </div>
+            </nav>
+    
+            <script src="./resource/dropDown.js"></script>
+			<div class="container-inner-bbs">
+				<div class="inner-div-bbs">
+                    <div class="left_sub_menu">
+                        <div class="logo_box">
+                
+                       
+                            functionido
+            
+                        </div>
+                    </div>
+                    </div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+   <script>
+         document.getElementById("functions").addEventListener("click",function(){
+            location.href = "./awoo-functions.html";
+        })
+        document.getElementById("functions-i-do").addEventListener("click",function(){
+            location.href = "./awoo-functions-i-do.html";
+        })
+        document.getElementById("MoveToMain").addEventListener("click",function(){
+            location.href = "/web-portfolio/index.html";
+        })
+   </script>
+</body>
+
+</html>

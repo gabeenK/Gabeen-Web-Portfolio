@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./resource/default.css">
+    <link rel="stylesheet" href="./resource/mainstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;700&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    .inner-div-bbs{
+        padding-top: 0;
+        scroll-behavior: smooth;
+    }
+    .sub{
+        animation: open 1s both 0s;
+    }
+
+    @keyframes open {
+        0%{
+            height: 0;
+        }
+        100%{
+            height:335px;
+        }
+    }
+    .section-container img{
+        max-width: 65%;
+    }
+
+    .inner-div-bbs > div{
+        width:100%;
+        min-height: 70vh;
+        display: flex;
+        margin-bottom: 60px;
+        flex-direction: column;
+        padding: 50px 0;
+    }
+    .inner-div-bbs > div > h1{
+        color: #444;
+        font-size: 25px;
+        margin-bottom: 25px;
+    }
+    .section-container{
+        display: flex;
+        width:100%;
+        height:100%;
+        justify-content: space-between;
+    }
+    .description{
+        width: 400px;
+        /* border: 1px solid black; */
+        background-color: white;
+        box-shadow: 1px 1px 6px #a5a5a5;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 34px;
+        padding: 25px;
+        box-sizing: border-box;
+    }
+
+</style>
+
+<body>
+
+    <div class="container-wrap">
+		<div class="container">
+            <nav class="nav">
+                <div class="menuwrap">
+                    <button type="button" id="MoveToMain">자기소개 페이지로 이동</button>
+                    <ul class="menu">
+                        <li><a href="./awoo-main.html">홈</a></li>
+                    </ul>
+
+                    <ul class="menu">
+                        <li><a href="./awoo-erd.html">ERD</a></li>
+                    </ul>
+
+                  
+                    <!-- <ul onclick="show_sub()" class="dropmenu" id=""> -->
+                    <ul class="dropmenu">
+                        <li  id="functions">기능 소개</li>
+                        <li class="drop_down_pointer"><span class="menu-up btn-display">▲</span><span
+                                class="menu-down">▼</span></li>
+                        <li>
+                            <ul class="sub">
+                                <li><a href="#home">홈 화면</a></li>
+                                <li><a href="#commuting">근태 관리</a></li>
+                                <li><a href="#holiday">휴가 신청</a></li>
+                                <li><a href="#bbs">게시판</a></li>
+                                <li><a href="#employee">직원현황</a></li>
+                                <li><a href="#message">쪽지</a></li>
+                                <li><a href="#mail">메일</a></li>
+                                <li><a href="#calendar">캘린더</a></li>
+                                <li><a href="#admin">관리자</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="dropmenu1" id="functions-i-do">
+                        <li>내가 구현한 기능</li>
+                        <li class="drop_down_pointer"><span class="menu-up1 btn-display">▲</span><span
+                                class="menu-down1">▼</span></li>
+                        <li>
+                            <ul class="sub1">
+                                <li><a href="#">홈 화면</a></li>
+                                <li><a href="#">근태 관리</a></li>
+                                <li><a href="#">휴가 신청</a></li>
+                                <li><a href="#">쪽지</a></li>
+                                <li><a href="#">메일</a></li>
+                                <li><a href="#">관리자 카카오톡 공지</a></li>
+                                <li><a href="#">로그인 보안 인증</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="menu">
+                        <li><a href="./awoo-testcase.html">테스트 케이스</a></li>
+                    </ul>
+
+                    
+                </div>
+            </nav>
+    
+            <script src="./resource/dropDown.js"></script>
+			<div class="container-inner-bbs" >
+				<div class="inner-div-bbs">
+                            <div id="home">
+                                <h1>홈 화면</h1>
+                                <div class="section-container">
+                                    <img src="./resource/home.png" alt="">
+                                    <div class="description">
+                                        <ul>
+                                            <ol>1. 출퇴근 기능 : 출퇴근 버튼 클릭 시, 출근과 퇴근을 기록할 수 있습니다.</ol>
+                                            <ol>2. 오늘의 날짜를 확인할 수 있는 일일 캘린더와 오늘의 일정을 표시해주는 일정표입니다.</ol>
+                                            <ol>3. 월급일까지 (기본 매월 1일로 설정)의 남은 시간을 표시하여 보여주는 그래프와, 남은 휴가와 휴가 요청 개수를 한눈에 볼 수 있도록 표시하는 도넛 그래프입니다.</ol>
+                                            <ol>4. 사내 공지사항을 알려줍니다.</ol>
+                                            <ol>5. 현재 위치에 따른 날씨를 보여줍니다.</ol>
+                                            <ol>6. 오늘의 뉴스를 보여줍니다.</ol>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="commuting">
+                                <h1>근태 관리</h1>
+                                <div class="section-container">
+                                    <img src="./resource/commuting.PNG" alt="">
+                                    <div class="description">
+                                        <ul>
+                                            <ol>1. 출퇴근 기능 : 출퇴근 버튼 클릭 시, 출근과 퇴근을 기록할 수 있습니다.</ol>
+                                            <ol>2. 오늘의 날짜를 확인할 수 있는 일일 캘린더와 오늘의 일정을 표시해주는 일정표입니다.</ol>
+                                            <ol>3. 월급일까지 (기본 매월 1일로 설정)의 남은 시간을 표시하여 보여주는 그래프와, 남은 휴가와 휴가 요청 개수를 한눈에 볼 수 있도록 표시하는 도넛 그래프입니다.</ol>
+                                            <ol>4. 사내 공지사항을 알려줍니다.</ol>
+                                            <ol>5. 현재 위치에 따른 날씨를 보여줍니다.</ol>
+                                            <ol>6. 오늘의 뉴스를 보여줍니다.</ol>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="holiday">
+                                <h1>휴가신청</h1>
+                                <div class="section-container"></div>
+
+                            </div>
+                            <div id="bbs">
+                                <h1>게시판</h1>
+                                <div class="section-container"></div>
+
+                            </div>
+                            <div id="employee">
+                                <h1>직원 현황</h1>
+                                <div class="section-container"></div>
+
+                            </div>
+                            <div id="message">
+                                <h1>쪽지</h1>
+                                <div class="section-container">
+
+                                </div>
+
+                            </div>
+                            <div id="mail">
+                                <h1>메일</h1>
+                                <div class="section-container"></div>
+
+                            </div>
+                            <div id="calendar">
+                                <h1>캘린더</h1>
+                                
+                                <div class="section-container"></div>
+                            </div>
+                            <div id="admin">
+                                <h1>관리자</h1>
+                                <div class="section-container"></div>
+
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+   <script>
+         document.getElementById("functions").addEventListener("click",function(){
+            location.href = "./awoo-functions.html";
+        })
+        document.getElementById("functions-i-do").addEventListener("click",function(){
+            location.href = "./awoo-functions-i-do.html";
+        })
+        document.getElementById("MoveToMain").addEventListener("click",function(){
+            location.href = "/web-portfolio/index.html";
+        })
+   </script>
+</body>
+
+</html>
