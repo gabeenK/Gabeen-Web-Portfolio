@@ -29,6 +29,7 @@ ul,li{
 
 nav{
 	width: 300px;
+	min-width: 265px;
     min-height: 100vh;
     padding: 35px 10px;
     box-sizing: border-box;

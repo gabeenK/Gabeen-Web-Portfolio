@@ -215,6 +215,7 @@
 }
 .wrapper-time .row-1{
   justify-content: flex-start;
+  min-width: 1000px;
 }
 .wrapper-time .row-2{
   justify-content: flex-end;
@@ -225,6 +226,7 @@
   width: calc(50% - 79px);
   padding: 20px;
   position: relative;
+  min-width: 400px;
 }
 .wrapper-time .row section::before{
   position: absolute;
@@ -283,6 +285,7 @@
   margin: 10px 0 17px 0;
   font-size: 14px;
   line-height: 18px;
+  min-width: 400px;
 }
 .row section .bottom a{
   text-decoration: none;
@@ -308,6 +311,28 @@
     width: 80%;
     color: gray;
     line-height: 50px;
+}
+@media(max-width: 1386px){
+  .project-container{
+  flex-direction: column;    
+  justify-content: center;
+  align-items: center;
+  }
+  .project-container > div{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: cneter;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .awoo-main{
+    width:80%;
+  }
+  .Portfolio-content-title {
+    margin-top: 50px;
+  }
 }
 @media(max-width: 790px){
   .wrapper-time .center-line{

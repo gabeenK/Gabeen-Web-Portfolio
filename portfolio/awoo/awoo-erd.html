@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>김가빈 포토폴리오</title>
     <link rel="stylesheet" href="./resource/default.css">
     <link rel="stylesheet" href="./resource/mainstyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;700&display=swap" rel="stylesheet">
@@ -21,6 +21,67 @@
     font-weight: bold;
     height: 40px;
     }
+
+    html {
+    scroll-behavior: smooth;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+
+
+    .section-container img{
+        max-width: 100%;
+    }
+
+    .inner-div-bbs > div{
+        width:100%;
+        min-height: 70vh;
+        display: flex;
+        flex-direction: column;
+        padding: 30px 0;
+    }
+    .inner-div-bbs > div > h1{
+        color: #444;
+        font-size: 25px;
+        margin-bottom: 25px;
+    }
+    .section-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #a7a7a7;
+    /* min-height: 65vh; */
+    padding: 3%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    }
+    .description{
+        width: 80%;
+        /* border: 1px solid black; */
+        background-color: white;
+        box-shadow: 2px 2px 2px #c5c5c5;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        box-sizing: border-box;
+        margin-top: 35px;
+        border: 1px solid #dfdfdf;
+        text-align: center;
+        line-height: 30px;
+        /* font-weight: bold; */
+        color: gray;
+        letter-spacing: 1px;
+    }
 </style>
 
 <body>
@@ -35,7 +96,7 @@
                     </ul>
 
                     <ul class="menu">
-                        <li><a href="./awoo-erd.html">ERD</a></li>
+                        <li><a href="./awoo-erd.html">프로젝트 구성</a></li>
                     </ul>
 
                     <!-- <ul onclick="show_sub()" class="dropmenu" id=""> -->
@@ -75,10 +136,6 @@
                         </li>
                     </ul>
 
-                    <ul class="menu">
-                        <li><a href="./awoo-testcase.html">테스트 케이스</a></li>
-                    </ul>
-
                     
                 </div>
             </nav>
@@ -86,9 +143,36 @@
             <script src="./resource/dropDown.js"></script>
 			<div class="container-inner-bbs">
 				<div class="inner-div-bbs">
-                        <p class="title"> ERD 소개</p>
-                        <img src="./resource/erd.png" alt="">
-                        
+                        <div id="home">
+                            <h1>프로젝트 구성</h1>
+                            <div class="section-container">
+                                <img src="./resource/gof-img/003.png" alt="">
+                            </div>    
+                            <div class="section-container">
+                                <img src="./resource/gof-img/004.png" alt="">
+                            </div>
+                        </div>
+                        <div id="myInfo">
+                            <h1>프로젝트 사용 도구</h1>
+                            <div class="section-container">
+                                <img src="./resource/gof-img/005.png" alt="">
+                            </div>
+                            <div class="section-container">
+                                <img src="./resource/gof-img/006.png" alt="">
+                            </div>
+                            <div class="section-container">
+                                <img src="./resource/gof-img/007.png" alt="">
+                            </div>
+                            <div class="section-container">
+                                <img src="./resource/gof-img/008.png" alt="">
+                            </div>
+                            <div class="section-container">
+                                <img src="./resource/gof-img/009.png" alt="">
+                            </div>
+                            <div class="section-container">
+                                <img src="./resource/gof-img/testcase.png" alt="">
+                            </div>
+                        </div>
                     </div>
 				</div>
 			</div>
@@ -104,7 +188,7 @@
             location.href = "./awoo-functions-i-do.html";
         })
         document.getElementById("MoveToMain").addEventListener("click",function(){
-            location.href = "/web-portfolio/index.html";
+            location.href = "/index.html";
         })
    </script>
 </body>
