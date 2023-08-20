@@ -118,6 +118,9 @@
         .show .back-to-position.delay-4 {
             transition-delay: 0.6s;
         }
+        .show .back-to-position.delay-5 {
+          transition-delay: 0.7s;
+      }
 
         .skill-head {
             height: 10%;
