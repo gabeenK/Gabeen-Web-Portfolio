@@ -141,6 +141,11 @@
 
    <script src="./resource/dropDown.js"></script>
    <script>
+       document.addEventListener("DOMContentLoaded", function(){
+           if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+               location.href="./error.html";
+           }
+       })
         document.getElementById("functions").addEventListener("click",function(){
             location.href = "./awoo-functions.html";
         })
@@ -150,11 +155,6 @@
         document.getElementById("MoveToMain").addEventListener("click",function(){
         	location.href = "/Gabeen-Web-Portfolio/index.html";
         })
-        document.addEventListener("DOMContentLoaded", function(){
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                location.href="./error.html";
-            }
-        });
 
         "use strict";
             const content = "Any Where, Office (or) Out"

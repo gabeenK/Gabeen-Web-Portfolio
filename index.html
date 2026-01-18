@@ -370,6 +370,11 @@
 </div>
 
 <script>
+    document.addEventListener("DOMContentLoaded", function(){
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            location.href="./error.html";
+        }
+    })
 
     // 스크롤
     const spyEls = document.querySelectorAll('.scroll-spy')
@@ -390,11 +395,6 @@
     });
     document.getElementById("git-portfolio").addEventListener("click",function(){
         location.href="https://github.com/KangHyeEun/Gof.git";
-    });
-    document.addEventListener("DOMContentLoaded", function(){
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            location.href="./error.html";
-        }
     });
 </script>
 </body>
