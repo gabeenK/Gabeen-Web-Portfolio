@@ -234,6 +234,11 @@
         document.getElementById("MoveToMain").addEventListener("click",function(){
         	location.href = "/Gabeen-Web-Portfolio/index.html";
         })
+         document.addEventListener("DOMContentLoaded", function(){
+             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                 location.href="./error.html";
+             };
+         });
    </script>
 </body>
 
