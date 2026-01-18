@@ -385,16 +385,16 @@
         console.log()
 
     })
-    document.addEventListener("DOMContentLoaded", function(){
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            location.href="./error.html";
-        };
-    });
     document.getElementById("a-portfolio").addEventListener("click",function(){
         location.href="./portfolio/awoo/awoo-main.html";
     });
     document.getElementById("git-portfolio").addEventListener("click",function(){
         location.href="https://github.com/KangHyeEun/Gof.git";
+    });
+    document.addEventListener("DOMContentLoaded", function(){
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            location.href="./error.html";
+        }
     });
 </script>
 </body>
